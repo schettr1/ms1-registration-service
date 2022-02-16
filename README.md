@@ -54,4 +54,6 @@ EMAIL-SERVICE listens/subscribes to the message from Apache Kafka, de-serializes
   }</i></li>
 </ul> 
 
+You should see new records created in database tables EMPLOYEE, EMAIL and PAYMENT.
+
 --- 
