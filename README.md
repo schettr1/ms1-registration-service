@@ -47,5 +47,6 @@ EMAIL-SERVICE listens/subscribes to the message from Apache Kafka, de-serializes
 6. Testing API using POSTMAN. <br></br>
 POST: [http://localhost:8081/register/employees](http://localhost:8081/register/employees) <br></br>
 {&emsp;``"firstname"`` : "Surya", ``"lastname"`` : "Chettri", ``"email"`` : "schetttri@gmail.com" &emsp;} <br></br>
+You will see new records created inside the database tables EMPLOYEE, EMAIL and PAYMENT.
 
 --- 
