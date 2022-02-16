@@ -19,7 +19,7 @@ Kafka Servers (both Zookeeper and Kafka) must be started and running before Kafk
 
 ---
 
-## Data Flow
+## Process Flow 
 Send request to GATEWAY-API using Postman. <br></br>
 GATEWAY-API forwards the request to REGISTRATION-SERVICE based on the configured routes. <br></br>
 First, REGISTRATION-SERVICE stores the user data to the database. <br></br>
@@ -52,8 +52,9 @@ EMAIL-SERVICE listens/subscribes to the message from Apache Kafka, de-serializes
   "lastname" : "Chettri", 
   "email" : "test@email.com" 
   }</i></li>
+  <li>You should see new records created in database tables EMPLOYEE, EMAIL and PAYMENT.</li>
 </ul> 
 
-You should see new records created in database tables EMPLOYEE, EMAIL and PAYMENT.
+
 
 --- 
