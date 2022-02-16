@@ -49,10 +49,12 @@ EMAIL-SERVICE listens/subscribes to the message from Apache Kafka, de-serializes
 <li>POST: [http://localhost:8081/register/employees](http://localhost:8081/register/employees) </li>      
 <li>BODY: </li>
 <i>{ 
-"firstname" : "Surya", 
-"lastname" : "Chettri", 
-"email" : "schetttri@gmail.com" 
+``"firstname"`` : "Surya", 
+``"lastname"`` : "Chettri", 
+``"email"`` : "schetttri@gmail.com" 
 }</i>
 </ul> 
+
+--- 
 
 --- 
