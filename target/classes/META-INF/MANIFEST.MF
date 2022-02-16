@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: ms1_registration_service
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: suny4
+Implementation-Vendor-Id: com.sbc
+Build-Jdk: 1.8.0_202
+Implementation-URL: https://spring.io/projects/spring-boot/ms1_registr
+ ation_service
+Created-By: Maven Integration for Eclipse
+
