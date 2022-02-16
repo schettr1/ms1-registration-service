@@ -44,13 +44,14 @@ EMAIL-SERVICE listens/subscribes to the message from Apache Kafka, de-serializes
 5. Then start Registration, Email and Payment Services. <br></br>
 6. Testing API using POSTMAN. <br></br>
 <ul>
-<li>POST: http://localhost:8081/register/employees </li>      
-<li>BODY: </li>
-<i>{ 
-"firstname" : "Surya", 
-"lastname" : "Chettri", 
-"email" : "test@email.com" 
-}</i>
+  <li>URL: http://localhost:8081/register/employees </li>   
+  <li>Method: POST </li>
+  <li>BODY: </li>
+  <li><i>{ 
+  "firstname" : "Surya", 
+  "lastname" : "Chettri", 
+  "email" : "test@email.com" 
+  }</i></li>
 </ul> 
 
 --- 
