@@ -45,16 +45,7 @@ EMAIL-SERVICE listens/subscribes to the message from Apache Kafka, de-serializes
 
 5. Then start Registration, Email and Payment Services. <br></br>
 6. Testing API using POSTMAN. <br></br>
-<ul>
-<li>POST: [http://localhost:8081/register/employees] (http://localhost:8081/register/employees) </li>      
-<li>BODY: </li>
-<i>{ 
-``"firstname"`` : "Surya", 
-``"lastname"`` : "Chettri", 
-``"email"`` : "schetttri@gmail.com" 
-}</i>
-</ul> 
-
---- 
+POST: [http://localhost:8081/register/employees](http://localhost:8081/register/employees) <br></br>
+{&emsp;``"firstname"`` : "Surya", ``"lastname"`` : "Chettri", ``"email"`` : "schetttri@gmail.com" &emsp;} <br></br>
 
 --- 
