@@ -1,18 +1,17 @@
 # MICROSERVICES -
 Microservices are small independent services that communicate over well-defined APIs. 
 Because these services can be run independently, even if one service goes down, other services keep running. 
-It provides loose coupling and better scalability. <br></br>
+It provides loose coupling and better scalability. This is a very simple application. The microservices components are as follows - <br></br>
 
 ---
 ## Components
-```bash
-ms1_config_server
-ms1_eureka_discovery
-ms1_gateway_api
-ms1_registration_service
-ms1_payment_service
-ms1_email_service
-```
+``ms1_config_server`` -  Spring Cloud Config server provides a central repository for configuration properties that are needed by applications in distributed system.<br></br>
+``ms1_eureka_discovery`` -  Eureka server is where all services are registered to maintain seamless communication between services <br></br>
+``ms1_gateway_api`` -  Gateway API is the front door for all requests coming from devices and websites into the application.<br></br>
+``ms1_registration_service`` -   This service will register new employee and find employee. <br></br>
+``ms1_payment_service`` -   This service will store payment details to the database. <br></br>
+``ms1_email_service`` -   This service will store email information to the database. <br></br>
+
 ---
 
 ## Pre-requisite
@@ -21,13 +20,12 @@ Kafka Servers (both Zookeeper and Kafka) must be started and running before Kafk
 ---
 
 ## Data Flow
-UI-SERVICE (_Postman_) sends request to GATEWAY-API. <br></br>
-GATEWAY-API is the entry point to the microservices application. <br></br>
-GATEWAY-API forwards the request to REGISTRATION-SERVICE based on the routes configured in _GatewayConfiguration.class_ <br></br>
+Send request to GATEWAY-API using Postman. <br></br>
+GATEWAY-API forwards the request to REGISTRATION-SERVICE based on the configured routes. <br></br>
 First, REGISTRATION-SERVICE stores the user data to the database. <br></br>
-Second, REGISTRATION-SERVICE sends payment (Java Object) to PAYMENT-SERVICE using RabbitMQ. (``asynchronous``). 
+Second, REGISTRATION-SERVICE sends payment details (Java Object) to PAYMENT-SERVICE using RabbitMQ. (``asynchronous``). 
 PAYMENT-SERVICE listens/subscribes to the message (Json String) from RabbitMQ, de-serializes it to Java Object and stores it to the database. <br></br>
-Third, REGISTRATION-SERVICE sends email  (Java Object) to EMAIL-SERVICE using Apache Kafka. (``asynchronous``).
+Third, REGISTRATION-SERVICE sends email information (Java Object) to EMAIL-SERVICE using Apache Kafka. (``asynchronous``).
 Alternately, you can use Feign Client to send email to EMAIL-SERVICE. (``synchronous``). 
 EMAIL-SERVICE listens/subscribes to the message from Apache Kafka, de-serializes the message (JSON String) to Java Object and stores it to the database. <br></br>
 
@@ -45,8 +43,14 @@ EMAIL-SERVICE listens/subscribes to the message from Apache Kafka, de-serializes
 
 5. Then start Registration, Email and Payment Services. <br></br>
 6. Testing API using POSTMAN. <br></br>
-POST: [http://localhost:8081/register/employees](http://localhost:8081/register/employees) <br></br>
-{&emsp;``"firstname"`` : "Surya", ``"lastname"`` : "Chettri", ``"email"`` : "schetttri@gmail.com" &emsp;} <br></br>
-You will see new records created inside the database tables EMPLOYEE, EMAIL and PAYMENT.
+<ul>
+<li>POST: [http://localhost:8081/register/employees](http://localhost:8081/register/employees) </li>      
+<li>BODY: </li>
+<i>{ 
+``"firstname"`` : "Surya", 
+``"lastname"`` : "Chettri", 
+``"email"`` : "schetttri@gmail.com" 
+}</i>
+</ul> 
 
 --- 
